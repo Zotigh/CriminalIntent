@@ -2,6 +2,8 @@ package edu.cnm.deepdive.criminalintent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,23 +68,23 @@ public class CrimeListFragment extends Fragment {
     public CrimeHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
     return new CrimeHolder(layoutInflater, parent);
-    }
-    @Override
+    }ze();
+  }
+
+  public void bind(Crime crime) {
+    mCrime = crime;
+    mTitleTextView.setText(mCrime.getTitle());
+
+    mDateTextView.setText((mCrime.getDate().toString()));
+  }
+
+}
+
+  @Override
     public void onBindViewHolder(CrimeHolder holder, int position) {
       Crime crime = mCrimes.get(position);
       holder.bind(crime);
     }
     @Override
-    public int getItemCount() {return mCrimes.size();
-    }
-
-    public void bind(Crime crime) {
-      mCrime = crime;
-      mTitleTextView.setText(mCrime.getTitle());
-
-      mDateTextView.setText((mCrime.getDate().toString()));
-    }
-
-  }
-
+    public int getItemCount() {return mCrimes.si
 }
